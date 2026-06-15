@@ -1,0 +1,66 @@
+# OpenMRS Bot (GPG key for code-signing OpenMRS artifacts) <infrastructure@openmrs.org>
+# https://keyserver.ubuntu.com/pks/lookup?search=CA12619FDE8CD6A93FAFE458A6F9608DCC73473F&fingerprint=on&op=index
+org.openmrs.* = 0xCA12619FDE8CD6A93FAFE458A6F9608DCC73473F
+
+# TODO: these were missed by the signature backfill on mavenrepo.openmrs.org;
+# remove once they are signed.
+org.openmrs.liquibase.ext:identity-insert:1.2.1 = noSig
+org.openmrs.liquibase.ext:modify-column:2.0.2 = noSig
+org.openmrs.liquibase.ext:type-converter:1.0.1 = noSig
+
+# ---------------------------------------------------------------------------
+# Third-party artifacts pulled in by the OpenMRS platform that the community
+# keys map (org.simplify4u:pgp-keys-map) does not cover. All entries are
+# version-scoped so they say nothing about newer releases.
+# ---------------------------------------------------------------------------
+
+# Signed with keys the community map does not list
+ca.uhn.hapi:*:2.0 = 0xF857459E3AE48018ABD0FA6B1B0064F5CB5A8D0C
+com.carrotsearch:junit-benchmarks:0.7.0 = 0xA32C3BF4A5B04200A31E05370A9F96A917990CF6
+com.mchange:c3p0:0.9.2.1 = 0x9F95EF0DE4D90F26CCAFFEAD982F38D39BB64BA8
+com.mchange:mchange-commons-java:0.2.3.4 = 0x9F95EF0DE4D90F26CCAFFEAD982F38D39BB64BA8
+net.sf.ehcache:ehcache:2.10.0 = 0x6EBDAE68E2E77C0449F1A32BB83A12A027FC6962
+org.apache.derby:derbyclient:10.4.2.0 = 0x8F5786E6ED0BD91C1BB836FD3D8B00E198E21827, noSig # pom is unsigned
+org.apache.lucene:lucene-analyzers-common:4.10.4 = 0x2C72EB1397733A551DDB60CCF119941F6E68DA61
+org.apache.lucene:lucene-core:4.10.4 = 0x2C72EB1397733A551DDB60CCF119941F6E68DA61
+org.apache.lucene:lucene-facet:4.10.4 = 0x2C72EB1397733A551DDB60CCF119941F6E68DA61
+org.apache.lucene:lucene-queries:4.10.4 = 0x2C72EB1397733A551DDB60CCF119941F6E68DA61
+org.apache.lucene:lucene-queryparser:4.10.4 = 0x2C72EB1397733A551DDB60CCF119941F6E68DA61
+org.apache.lucene:lucene-sandbox:4.10.4 = 0x2C72EB1397733A551DDB60CCF119941F6E68DA61
+org.apache.poi:poi:3.5-beta5 = 0x7D770C776CE7754EE6AF23AA69340A02F5BB52CD
+org.apache.velocity:velocity:1.6.2 = 0xE610301A5BE4DAF869D7076ACA9843A0AE4C69EC
+org.codehaus.jackson:jackson-core-asl:1.9.13 = 0x2A21DE22697E264345A764832D1F2506C6ECEDF4
+org.codehaus.jackson:jackson-mapper-asl:1.9.13 = 0x2A21DE22697E264345A764832D1F2506C6ECEDF4
+org.liquibase:liquibase-core:2.0.5 = 0xB0647A3A4F33783CA919D946C71BF40AFABDB9E5
+org.powermock:powermock-api-mockito:1.5 = 0x07E20F0103D9DFC697C490D0368557390486F2C5
+org.powermock:powermock-api-support:1.5 = 0x07E20F0103D9DFC697C490D0368557390486F2C5
+org.powermock:powermock-core:1.5 = 0x07E20F0103D9DFC697C490D0368557390486F2C5
+org.powermock:powermock-module-junit4:1.5 = 0x07E20F0103D9DFC697C490D0368557390486F2C5
+org.powermock:powermock-module-junit4-common:1.5 = 0x07E20F0103D9DFC697C490D0368557390486F2C5
+org.powermock:powermock-reflect:1.5 = 0x07E20F0103D9DFC697C490D0368557390486F2C5
+
+# Spring 4.1.4 was signed with a key that has since been revoked; the
+# revocation certificate is on the key servers but the public key is not
+# (the ! prefix accepts the key id without full verification).
+org.springframework:*:4.1.4.RELEASE = !0xE2ACB037933CDEAAB7BF77D49A2C7A98E457C53D
+
+# Broken signatures published with these old artifacts
+net.sf.ehcache:ehcache:pom:2.10.0 = badSig
+xmlunit:xmlunit:jar:1.3 = badSig
+
+# Published without signatures
+asm:asm-commons:2.2.3 = noSig
+asm:asm-tree:2.2.3 = noSig
+asm:asm-util:2.2.3 = noSig
+cglib:cglib-nodep:2.2 = noSig
+com.h2database:h2:1.4.187 = noSig
+net.sourceforge.jtds:jtds:1.2.2 = noSig
+org.azeckoski:reflectutils:0.9.14 = noSig
+org.databene:databene-benerator:0.5.9 = noSig
+org.databene:databene-commons:0.4.9 = noSig
+org.databene:databene-gui:0.1.9 = noSig
+org.databene:databene-webdecs:0.4.9 = noSig
+org.dbunit:dbunit:2.4.7 = noSig
+org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1 = noSig
+org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final = noSig
+postgresql:postgresql:8.3-603.jdbc4 = noSig
